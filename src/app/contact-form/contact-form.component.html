@@ -1,0 +1,32 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact">
+      <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input required minlength="3" maxlength="10" ngModel name="firstName" #firstName="ngModel" id="firstName" type="text" class="form-control" />
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">first name cannot be empty</div>
+            <div *ngIf="firstName.errors.minlength">first name should have atleast {{firstName.errors.minlength.requiredLength}} characters</div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="comment">comment</label>
+    <textarea  ngModel name="comment" #comment = "ngModel" id="comment" rows="10" class="form-control"></textarea>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ngModel name="isSubscribed">
+      Subscribe
+    </label>
+  </div>
+  <div *ngFor="let methods of contactMethods" class="radio">
+    <label>
+      <input type="radio" ngModel name="contactMethods" [value]="methods.name">
+      {{methods.name}}
+    </label>
+  </div>
+  <p>{{f.value | json}}</p>
+  <button  type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
+
