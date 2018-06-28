@@ -16,7 +16,6 @@ const appRoutes: Route[] = [
     {
         path: 'datarenderer',
         component: DataRendererComponent,
-       
         
     }
 

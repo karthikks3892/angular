@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { Resolve } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable()
 export class ValuesService {
   private myMethodSubject = new Subject<any>();
-  value: any;
+  empUrl : string = '/server';
+
+  constructor(private http:HttpClient){}
+
   Method(data) {
-    //this.myMethodSubject.next(data);
-    this.value = data;
+    const empCreate$ = this.http.post(this.empUrl,data).subscribe(() =>{
+      console.log('data sent succesfully');
+    });
+    return empCreate$;
 
   }
 
-  getValues() {
-    return this.value;
-  }
+
 
 }

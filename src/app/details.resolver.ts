@@ -5,12 +5,9 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 
-export class DetailResolver implements Resolve<any>{
+export class DetailResolver {
 
     constructor(private service: ValuesService) { }
 
-    resolve(): Observable<any> {
-        return this.service.getValues();
-    }
-
+   
 }
