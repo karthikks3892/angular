@@ -9,11 +9,16 @@ import { UserNameValidators } from './username.validators';
 })
 export class LoginformComponent {
   form = new FormGroup({
-    username: new FormControl('', [Validators.required,
-    Validators.minLength(3),
-    UserNameValidators.cannotContainSpaces]),
+    username: new FormControl('', Validators.required,
+      UserNameValidators.shouldBeUnique),
     password: new FormControl('', Validators.required)
   });
+
+  login() {
+    this.form.setErrors({
+      inValidLogin: true
+    });
+  }
 
   get username() {
     return this.form.get('username');

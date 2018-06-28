@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailResolver } from './details.resolver';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginformComponent } from './loginform/loginform.component';
+import { NewcoursesComponent } from './newcourses/newcourses.component';
 
 
 
@@ -26,7 +27,8 @@ import { LoginformComponent } from './loginform/loginform.component';
     ContactFormComponent,
     DataRendererComponent,
     HomeComponent,
-    LoginformComponent
+    LoginformComponent,
+    NewcoursesComponent
   
   ],
   imports: [
