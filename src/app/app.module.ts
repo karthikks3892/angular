@@ -6,12 +6,14 @@ import { ListcoursesService } from './listcourses.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataRendererComponent } from './data-renderer/data-renderer.component';
 import { ValuesService } from './values.service';
 import { appRouting } from './app.router';
 import { HomeComponent } from './home/home.component';
 import { DetailResolver } from './details.resolver';
+import { NglistComponent } from './nglist/nglist.component';
+import { RformsComponent } from './rforms/rforms.component';
 
 
 
@@ -23,12 +25,15 @@ import { DetailResolver } from './details.resolver';
     PanelComponent,
     ContactFormComponent,
     DataRendererComponent,
-    HomeComponent
+    HomeComponent,
+    NglistComponent,
+    RformsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    appRouting
+    appRouting,
+    ReactiveFormsModule
     
 
   ],
