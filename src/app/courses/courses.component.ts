@@ -8,11 +8,10 @@ import { ListcoursesService } from '../listcourses.service';
 })
 export class CoursesComponent implements OnInit {
  courses;
-  constructor(service:ListcoursesService) {
+  constructor(service: ListcoursesService) {
     this.courses = service.getCourses();
    }
-      
-  ngOnInit() {
+        ngOnInit() {
   }
 
 }

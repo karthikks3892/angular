@@ -7,21 +7,21 @@ import { UserNameValidators } from './username.validators';
   templateUrl: './rforms.component.html',
   styleUrls: ['./rforms.component.css']
 })
-export class RformsComponent  {
+export class RformsComponent {
 
   form = new FormGroup({
-    username:new FormControl('',Validators.required,UserNameValidators.shouldBeUnique),
-    password:new FormControl('',Validators.required)
+    username: new FormControl('', Validators.required, UserNameValidators.shouldBeUnique),
+    password: new FormControl('', Validators.required)
 
   });
 
-  get username(){
+  get username() {
     return this.form.get('username');
   }
 
-  login(){
+  login() {
     this.form.setErrors({
-      invalidLogin:true
+      invalidLogin: true
     });
   }
 }

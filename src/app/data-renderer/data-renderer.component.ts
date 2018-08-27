@@ -11,7 +11,7 @@ export class DataRendererComponent implements OnInit {
   data;
   constructor(private valueService: ValuesService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.data = this.valueService.getValues();
     console.log(this.data);
   }
